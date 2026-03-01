@@ -18,7 +18,7 @@ function About() {
               <div className="card-body p-4">
                 <h3 className="h5 mb-3">Education & Experience</h3>
                 <p className="mb-2">
-                  <strong>B.Com with Computer Application</strong> - Bharatiar University (2020 - 2023)
+                  <strong>B.Com with Computer Application</strong> - Bharathiar University (2020 - 2023)
                 </p>
                 <p className="mb-2">
                   <strong>Process Associate</strong> - Tata Consultancy Services (Aug 2023 - Dec 2024)
