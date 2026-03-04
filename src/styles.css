@@ -359,13 +359,13 @@ html,
 
   .hero-subtitle {
     display: block;
-    text-align: center;
+    text-align: left;
     width: 100%;
     margin-bottom: 12px;
   }
 
   .hero-section {
-    padding-top: 24px;
+    padding-top: 8px;
     padding-bottom: 24px;
   }
 
