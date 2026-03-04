@@ -12,6 +12,7 @@ const NAV_ITEMS = [
 function Header() {
   const { isDark, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const sections = NAV_ITEMS.map((item) => document.getElementById(item.id)).filter(Boolean);
@@ -50,6 +51,17 @@ function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <nav
       className={`navbar navbar-expand-lg sticky-top shadow-sm theme-navbar ${
@@ -63,22 +75,22 @@ function Header() {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
           aria-controls="navbarNav"
-          aria-expanded="false"
+          aria-expanded={mobileMenuOpen}
           aria-label="Toggle navigation"
+          onClick={() => setMobileMenuOpen((prev) => !prev)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto d-flex align-items-center">
+        <div className={`navbar-collapse custom-mobile-menu ${mobileMenuOpen ? "open" : ""}`} id="navbarNav">
+          <ul className="navbar-nav ms-auto d-flex align-items-center mobile-menu-links">
             {NAV_ITEMS.map((item) => (
               <li className="nav-item" key={item.id}>
                 <a
                   className={`nav-link ${activeSection === item.id ? "active" : ""}`}
                   href={`#${item.id}`}
                   aria-current={activeSection === item.id ? "page" : undefined}
+                  onClick={handleNavClick}
                 >
                   {item.label}
                 </a>
@@ -87,7 +99,10 @@ function Header() {
             <li className="nav-item d-flex align-items-center ms-2">
               <span
                 className="theme-toggle-icon"
-                onClick={toggleTheme}
+                onClick={() => {
+                  toggleTheme();
+                  setMobileMenuOpen(false);
+                }}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(event) => {
