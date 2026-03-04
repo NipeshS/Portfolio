@@ -13,7 +13,7 @@ function Home() {
             />
           </div>
           <div className="col-md-7">
-            <p className="hero-kicker text-uppercase mb-2">
+            <p className="hero-kicker hero-subtitle text-uppercase mb-2">
               <TypeAnimation
                 sequence={[
                   "Java Full Stack Developer",
