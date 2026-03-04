@@ -12,7 +12,7 @@ function Home() {
               className="img-fluid rounded-circle shadow profile-image hero-avatar"
             />
           </div>
-          <div className="col-md-7">
+          <div className="col-md-7 hero-content">
             <p className="hero-kicker hero-subtitle text-uppercase mb-2">
               <TypeAnimation
                 sequence={[
