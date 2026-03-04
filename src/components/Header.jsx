@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
 
@@ -12,9 +11,9 @@ function Header() {
       }`}
     >
       <div className="container">
-        <NavLink className="navbar-brand fw-bold" to="/">
+        <a className="navbar-brand fw-bold" href="#home">
           Nipesh S Portfolio
-        </NavLink>
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -29,24 +28,16 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto d-flex align-items-center">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Home
-              </NavLink>
+              <a className="nav-link" href="#home">Home</a>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
-                About
-              </NavLink>
+              <a className="nav-link" href="#about">About</a>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/projects">
-                Projects
-              </NavLink>
+              <a className="nav-link" href="#projects">Projects</a>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/contact">
-                Contact
-              </NavLink>
+              <a className="nav-link" href="#contact">Contact</a>
             </li>
             <li className="nav-item d-flex align-items-center ms-2">
               <span

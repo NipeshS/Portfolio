@@ -30,6 +30,30 @@ function Contact() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    const trimmedData = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      subject: formData.subject.trim(),
+      message: formData.message.trim()
+    };
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!trimmedData.name || !trimmedData.email || !trimmedData.subject || !trimmedData.message) {
+      setSubmitStatus({
+        type: "error",
+        message: "Please fill in Name, Email, Subject, and Message before submitting."
+      });
+      return;
+    }
+
+    if (!emailPattern.test(trimmedData.email)) {
+      setSubmitStatus({
+        type: "error",
+        message: "Please enter a valid email address."
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus({
       type: "",
@@ -41,10 +65,10 @@ function Contact() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message
+          name: trimmedData.name,
+          email: trimmedData.email,
+          subject: trimmedData.subject,
+          message: trimmedData.message
         },
         EMAILJS_PUBLIC_KEY
       );

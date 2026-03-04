@@ -1,3 +1,11 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
 :root {
   --bg-color: #F8FAFC;
   --main-bg: #FFFFFF;
@@ -80,12 +88,28 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
+  min-height: 100vh;
+  overflow-y: auto;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.app-shell {
+html,
+#root {
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.app-container {
   background: var(--main-bg);
   color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.main-content {
+  flex: 1;
 }
 
 *,

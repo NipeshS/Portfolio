@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 function Home() {
   return (
     <section className="hero-section hero-full-height d-flex align-items-center">
@@ -20,12 +18,12 @@ function Home() {
               I focus on writing maintainable code and creating clean, user-friendly experiences that deliver efficient and scalable solutions.
             </p>
             <div className="d-flex flex-wrap gap-2">
-              <Link to="/projects" className="btn btn-primary btn-lg px-4">
+              <a href="#projects" className="btn btn-primary btn-lg px-4">
                 View Projects
-              </Link>
-              <Link to="/contact" className="btn btn-outline-primary btn-lg px-4">
+              </a>
+              <a href="#contact" className="btn btn-outline-primary btn-lg px-4">
                 Contact Me
-              </Link>
+              </a>
             </div>
           </div>
         </div>
