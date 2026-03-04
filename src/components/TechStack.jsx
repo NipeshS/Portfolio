@@ -22,10 +22,10 @@ const techItems = [
 
 function TechStack() {
   return (
-    <section className="mt-4 text-center">
+    <section className="tech-stack-section text-center reveal">
       <div className="tech-stack-modern p-4 p-md-5">
         <h3 className="h4 fw-bold mb-4 tech-stack-heading">Tech Stack</h3>
-        <div className="d-flex justify-content-center flex-wrap align-items-center gap-3">
+        <div className="d-flex justify-content-center flex-wrap align-items-center tech-grid-gap">
           {techItems.map((item) => {
             const Icon = item.icon;
             return (

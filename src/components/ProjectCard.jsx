@@ -1,80 +1,42 @@
-import { FaGithub, FaJava, FaDatabase } from "react-icons/fa";
+import { FaGithub, FaJava } from "react-icons/fa";
 import {
   SiHtml5,
   SiCss3,
-  SiBootstrap,
   SiJavascript,
+  SiBootstrap,
   SiMysql,
-  SiApachetomcat
+  SiApachetomcat,
+  SiNodedotjs
 } from "react-icons/si";
 
-const techGroups = [
-  {
-    title: "Frontend",
-    items: [
-      { name: "HTML5", icon: SiHtml5, colorClass: "text-danger" },
-      { name: "CSS3", icon: SiCss3, colorClass: "text-primary" },
-      { name: "Bootstrap 5", icon: SiBootstrap, colorClass: "text-purple" },
-      { name: "JavaScript", icon: SiJavascript, colorClass: "text-warning" }
-    ]
-  },
-  {
-    title: "Backend",
-    items: [
-      { name: "Java Servlets", icon: FaJava, colorClass: "text-danger" },
-      { name: "JDBC", icon: FaDatabase, colorClass: "text-secondary" }
-    ]
-  },
-  {
-    title: "Database",
-    items: [{ name: "MySQL", icon: SiMysql, colorClass: "text-info" }]
-  },
-  {
-    title: "Server",
-    items: [{ name: "Apache Tomcat 9+", icon: SiApachetomcat, colorClass: "text-warning" }]
-  }
+const techItems = [
+  { name: "HTML", icon: SiHtml5, colorClass: "text-danger" },
+  { name: "CSS", icon: SiCss3, colorClass: "text-primary" },
+  { name: "JavaScript", icon: SiJavascript, colorClass: "text-warning" },
+  { name: "Bootstrap", icon: SiBootstrap, colorClass: "text-purple" },
+  { name: "Java", icon: FaJava, colorClass: "text-danger" },
+  { name: "Node.js", icon: SiNodedotjs, colorClass: "text-success" },
+  { name: "MySQL", icon: SiMysql, colorClass: "text-info" },
+  { name: "Tomcat", icon: SiApachetomcat, colorClass: "text-warning" }
 ];
 
 const features = [
-  "Add new tasks (title, description, due date, status)",
-  "View all tasks in responsive Bootstrap table",
+  "Add tasks",
   "Edit tasks",
   "Delete tasks",
   "Mark tasks as completed",
-  "Search and filter tasks",
-  "Client-side and server-side validation"
+  "Search and filter tasks"
 ];
 
 function ProjectCard() {
   return (
-    <div className="card border-0 shadow-sm project-card h-100">
+    <article className="card border-0 shadow-sm project-card h-100">
       <div className="card-body p-4 p-md-5">
-        <h3 className="h4 fw-bold mb-2 project-title">To-Do List Web Application (Java Servlets + JDBC + MySQL)</h3>
+        <h3 className="h4 fw-bold mb-2 project-title">To-Do List Web Application</h3>
         <p className="mb-4 project-description">
-          A beginner-friendly Full Stack Development mini project with complete CRUD functionality.
+          A full-stack task management app with CRUD operations, status tracking, and validation, built
+          for smooth user workflows and maintainable backend logic.
         </p>
-
-        <h4 className="h6 text-uppercase text-muted mb-3">Tech Stack</h4>
-        <div className="row g-3 mb-4">
-          {techGroups.map((group) => (
-            <div className="col-12 col-md-6" key={group.title}>
-              <div className="tech-group-card h-100">
-                <p className="small text-uppercase fw-semibold text-muted mb-2">{group.title}</p>
-                <div className="d-flex flex-wrap gap-2">
-                  {group.items.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <span className="tech-badge" key={item.name}>
-                        <Icon className={item.colorClass} aria-hidden="true" />
-                        {item.name}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
         <h4 className="h6 text-uppercase text-muted mb-2">Features</h4>
         <ul className="project-feature-list mb-4">
@@ -83,7 +45,20 @@ function ProjectCard() {
           ))}
         </ul>
 
-        <div className="d-flex justify-content-center">
+        <h4 className="h6 text-uppercase text-muted mb-3">Tech Stack</h4>
+        <div className="d-flex flex-wrap gap-2 mb-4">
+          {techItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <span className="tech-badge" key={item.name}>
+                <Icon className={item.colorClass} aria-hidden="true" />
+                {item.name}
+              </span>
+            );
+          })}
+        </div>
+
+        <div className="d-flex justify-content-start">
           <a
             className="btn btn-primary d-inline-flex align-items-center gap-2 project-github-btn"
             href="https://github.com/NipeshS/To-Do"
@@ -95,7 +70,7 @@ function ProjectCard() {
           </a>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
