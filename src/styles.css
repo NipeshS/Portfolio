@@ -125,11 +125,15 @@ html,
   margin: 0;
 }
 
+.about-section {
+  padding-bottom: 24px;
+}
+
 .tech-stack-section {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   padding-top: 24px;
-  padding-bottom: 12px;
+  padding-bottom: 0;
 }
 
 #projects {
@@ -139,8 +143,12 @@ html,
 }
 
 .project-section {
-  padding-top: 24px;
-  padding-bottom: 80px;
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+
+.contact-section {
+  padding-top: 32px;
 }
 
 .reveal {

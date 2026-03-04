@@ -2,7 +2,7 @@ import TechStack from "../components/TechStack";
 
 function About() {
   return (
-    <section className="section-block">
+    <section className="section-block about-section">
       <div className="container">
         <div className="row g-4 g-lg-5 align-items-stretch about-layout-row reveal">
           <div className="col-lg-7">

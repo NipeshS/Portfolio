@@ -94,7 +94,7 @@ function Contact() {
   };
 
   return (
-    <section className="section-block">
+    <section className="section-block contact-section">
       <div className="container">
         <div className="row g-4 g-lg-5 align-items-stretch">
           <div className="col-md-6 col-lg-6">
