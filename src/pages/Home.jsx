@@ -4,8 +4,8 @@ function Home() {
   return (
     <section className="hero-section d-flex align-items-center">
       <div className="container">
-        <div className="row align-items-center g-5 w-100">
-          <div className="col-md-5 text-center text-md-start">
+        <div className="row align-items-center g-5 w-100 hero-container">
+          <div className="col-md-5 text-center text-md-start hero-image">
             <img
               src="/profile.jpg"
               alt="Profile"
@@ -38,7 +38,7 @@ function Home() {
               and polished frontend experiences. My focus is maintainable code, performance, and
               intuitive UI that helps users get work done faster.
             </p>
-            <div className="d-flex flex-wrap gap-2 gap-md-3">
+            <div className="d-flex flex-wrap gap-2 gap-md-3 hero-buttons">
               <a href="#projects" className="btn btn-primary btn-lg px-4 hero-cta-btn">
                 View Projects
               </a>
