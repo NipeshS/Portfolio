@@ -11,45 +11,7 @@ const NAV_ITEMS = [
 
 function Header() {
   const { isDark, toggleTheme } = useTheme();
-  const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const sections = NAV_ITEMS.map((item) => document.getElementById(item.id)).filter(Boolean);
-    const visibilityMap = new Map();
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          visibilityMap.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
-        });
-
-        let nextActive = activeSection;
-        let maxRatio = 0;
-
-        NAV_ITEMS.forEach((item) => {
-          const ratio = visibilityMap.get(item.id) || 0;
-          if (ratio > maxRatio) {
-            maxRatio = ratio;
-            nextActive = item.id;
-          }
-        });
-
-        if (maxRatio > 0) {
-          setActiveSection((prev) => (prev === nextActive ? prev : nextActive));
-        }
-      },
-      {
-        threshold: 0.5
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-      observer.disconnect();
-    };
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
@@ -102,9 +64,8 @@ function Header() {
             {NAV_ITEMS.map((item) => (
               <li className="nav-item" key={item.id}>
                 <a
-                  className={`nav-link ${activeSection === item.id ? "active" : ""}`}
+                  className="nav-link"
                   href={`#${item.id}`}
-                  aria-current={activeSection === item.id ? "page" : undefined}
                   onClick={handleNavClick}
                 >
                   {item.label}

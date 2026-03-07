@@ -1,4 +1,4 @@
-import { FaGithub, FaJava } from "react-icons/fa";
+import { FaDatabase, FaGithub, FaJava } from "react-icons/fa";
 import {
   SiHtml5,
   SiCss3,
@@ -21,6 +21,7 @@ const techIconMap = {
   Java: { icon: FaJava, colorClass: "text-danger" },
   "Java Servlets": { icon: FaJava, colorClass: "text-danger" },
   "Node.js": { icon: SiNodedotjs, colorClass: "text-success" },
+  JDBC: { icon: FaDatabase, colorClass: "text-info" },
   MySQL: { icon: SiMysql, colorClass: "text-info" },
   Tomcat: { icon: SiApachetomcat, colorClass: "text-warning" }
 };
