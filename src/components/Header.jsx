@@ -82,7 +82,22 @@ function Header() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className={`navbar-collapse custom-mobile-menu ${mobileMenuOpen ? "open" : ""}`} id="navbarNav">
+        <div
+          className={`navbar-collapse custom-mobile-menu ${mobileMenuOpen ? "open" : ""}`}
+          id="navbarNav"
+          aria-hidden={!mobileMenuOpen}
+        >
+          <div className="mobile-menu-header">
+            <span className="mobile-menu-title">Menu</span>
+            <button
+              type="button"
+              className="mobile-menu-close"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+          </div>
           <ul className="navbar-nav ms-auto d-flex align-items-center mobile-menu-links">
             {NAV_ITEMS.map((item) => (
               <li className="nav-item" key={item.id}>
@@ -123,6 +138,11 @@ function Header() {
             </li>
           </ul>
         </div>
+        <div
+          className={`mobile-menu-backdrop ${mobileMenuOpen ? "open" : ""}`}
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden={!mobileMenuOpen}
+        />
       </div>
     </nav>
   );
