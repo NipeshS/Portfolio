@@ -49,7 +49,7 @@ function ContactInfo() {
           <div className="d-flex gap-3">
             <a
               className="social-icon-link"
-              href="https://linkedin.com/in/"
+              href="https://linkedin.com/in/nipeshs27"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
@@ -58,7 +58,7 @@ function ContactInfo() {
             </a>
             <a
               className="social-icon-link"
-              href="https://github.com/"
+              href="https://github.com/NipeshS"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
