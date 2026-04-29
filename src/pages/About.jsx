@@ -24,7 +24,7 @@ function About() {
                   <strong>Process Associate</strong> - Tata Consultancy Services (Aug 2023 - Dec 2024)
                 </p>
                 <p className="mb-0">
-                  <strong>Pursuing Java Full Stack Development</strong> - Internz Learn (Jan 2025 - Present)
+                  <strong>Pursuing Java Developer</strong> - Stackly (Mar 2026 - Present)
                 </p>
               </div>
             </div>
